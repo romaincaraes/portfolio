@@ -60,6 +60,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'HOST': os.getenv('DJANGO_DATABASE_HOST'),
+        'PORT': os.getenv('DJANGO_DATABASE_PORT'),
+        'USER': os.getenv('DJANGO_DATABASE_USER'),
+        'PASSWORD': os.getenv('DJANGO_DATABASE_PASSWORD')
     }
 }
 
@@ -95,11 +99,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'https://static.romaincaraes.fr/'
 STATIC_ROOT = BASE_DIR / 'static/'
 STATICFILES_DIRS = []
 
-MEDIA_URL = 'media/'
+MEDIA_URL = 'https://media.romaincaraes.fr/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 MEDIAFILES_DIRS = []
 
